@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#090711">
+<title>TX10 GAMING OFC</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;padding:20px;
+ background:radial-gradient(circle at top,#351044,#090711 60%);
+ color:#fff;font-family:Arial,sans-serif;min-height:100vh
+}
+.container{max-width:480px;margin:auto}
+header{text-align:center;padding:25px 10px}
+.logo{
+ display:inline-block;padding:15px 25px;
+ border-radius:18px;font-size:26px;font-weight:bold;
+ background:linear-gradient(135deg,#ff36a5,#803cff);
+ box-shadow:0 0 30px #ff36a566
+}
+h1{font-size:26px;margin:18px 0 8px}
+h1 span{color:#ff55b5}
+.subtitle{color:#b9afc9;font-size:13px;line-height:1.7}
+.card{
+ background:#171321;border:1px solid #ffffff20;
+ border-radius:20px;padding:20px;margin:17px 0;
+ box-shadow:0 12px 35px #0007
+}
+.card h2{font-size:15px;margin:0 0 16px}
+.channel{
+ display:flex;align-items:center;
+ justify-content:space-between;gap:10px;
+ background:#ffffff08;border:1px solid #ffffff12;
+ border-radius:13px;padding:14px;margin:10px 0
+}
+.channel b{font-size:12px}
+.join,.button{
+ display:inline-block;text-decoration:none;color:white;
+ background:linear-gradient(100deg,#ff369e,#873cff);
+ padding:11px 14px;border:0;border-radius:10px;
+ font-size:11px;font-weight:bold;cursor:pointer
+}
+.button{width:100%;padding:15px;font-size:13px;margin-top:12px}
+.note{font-size:11px;color:#aaa1b9;line-height:1.7}
+input{
+ width:100%;padding:14px;margin:8px 0;
+ border-radius:10px;border:1px solid #ffffff22;
+ background:#0d0b16;color:white;outline:none
+}
+#message{font-size:12px;color:#ff9bce;text-align:center;margin-top:12px}
+footer{text-align:center;color:#766d83;font-size:10px;padding:20px}
+.hidden{display:none}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<header>
+ <div class="logo">TX10</div>
+ <h1>TX10 <span>GAMING OFC</span></h1>
+ <p class="subtitle">
+ Welcome to Official Access Center.<br>
+ Join our Telegram channels to unlock your reward.
+ </p>
+</header>
+
+<section class="card">
+ <h2>01 / JOIN TELEGRAM CHANNELS</h2>
+
+ <div class="channel">
+  <b>TELEGRAM CHANNEL 01</b>
+  <a class="join" id="join1" href="https://t.me/" target="_blank">JOIN ↗</a>
+ </div>
+
+ <div class="channel">
+  <b>TELEGRAM CHANNEL 02</b>
+  <a class="join" id="join2" href="https://t.me/" target="_blank">JOIN ↗</a>
+ </div>
+
+ <div class="channel">
+  <b>TELEGRAM CHANNEL 03</b>
+  <a class="join" id="join3" href="https://t.me/" target="_blank">JOIN ↗</a>
+ </div>
+
+ <p class="note">
+ তিনটি চ্যানেলেই Join Request পাঠিয়ে এই পেজে ফিরে আসো।
+ তারপর Verify বাটনে চাপ দাও।
+ </p>
+</section>
+
+<section class="card">
+ <h2>02 / VERIFY YOUR ACCESS</h2>
+ <p class="note">Join Request পাঠানো শেষ হলে Verify করো।</p>
+ <button class="button" onclick="verifyAccess()">
+ VERIFY & UNLOCK KEY
+ </button>
+ <div id="message"></div>
+</section>
+
+<section class="card">
+ <h2>03 / OWNER ADMIN LOGIN</h2>
+ <p class="note">শুধু অনুমোদিত Owner Admin-এর জন্য।</p>
+ <input id="username" placeholder="Owner Username">
+ <input id="password" type="password" placeholder="Password">
+ <button class="button" onclick="adminLogin()">ADMIN LOGIN</button>
+ <div id="adminMessage"></div>
+ <p class="note">
+ নিরাপত্তার জন্য আসল Login Server-এর মাধ্যমে চালু করতে হবে।
+ </p>
+</section>
+
+<footer>
+ TX10 GAMING OFC<br>
+ PREMIUM OFFICIAL ACCESS PORTAL
+</footer>
+
+</div>
+
+<script>
+// নিজের Telegram Invite Link এখানে বসাবে।
+const channelLinks = [
+ "YOUR_CHANNEL_LINK_1",
+ "YOUR_CHANNEL_LINK_2",
+ "YOUR_CHANNEL_LINK_3"
+];
+
+channelLinks.forEach((link,index)=>{
+ document.getElementById("join"+(index+1)).href =
+ link.startsWith("https://t.me/") ? link : "https://t.me/";
+});
+
+function verifyAccess(){
+ document.getElementById("message").textContent =
+ "লাইভ যাচাই চালু করতে Server সংযোগ প্রয়োজন।";
+}
+
+function adminLogin(){
+ const username=document.getElementById("username").value.trim();
+ const password=document.getElementById("password").value;
+
+ if(username==="tx10shanto" && password.length>0){
+  document.getElementById("adminMessage").textContent =
+  "Admin Server এখনো যুক্ত হয়নি। Live Login চালু করতে Server Setup প্রয়োজন।";
+ }else{
+  document.getElementById("adminMessage").textContent =
+  "Username অথবা Password পূরণ করো।";
+ }
+}
+</script>
+
+</body>
+  </html>
